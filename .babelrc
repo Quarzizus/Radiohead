@@ -1,0 +1,16 @@
+// babel/core -> Modern JS compatible with all navs
+// babel-loader -> Loader of Webpack
+
+{
+    // ECMAscript and JSX
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+      // To use sintax class in React
+    "plugins": [
+        [
+          "@babel/plugin-proposal-class-properties"
+        ]
+    ]
+}

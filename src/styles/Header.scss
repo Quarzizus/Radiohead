@@ -1,0 +1,30 @@
+@import '../styles/variables/Variables.scss';
+
+.Header{
+    background-color: $black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    .Header_title{
+        color: $gold;
+        text-decoration: none;
+    }
+    .Header_menu{
+        list-style: none;
+        display: flex;
+        width: 30%;
+        justify-content: space-around;
+
+        li{
+            display: inline-block;
+            .link{
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+    }
+
+}

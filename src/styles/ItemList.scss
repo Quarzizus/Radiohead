@@ -1,0 +1,32 @@
+@import '../styles/variables/Variables.scss';
+
+.List_card{
+    margin-top: 10px;
+    color: black;
+    display: flex;
+    height: 130px;
+    .List_card--contain-img{
+        width: 30%;
+        background-color: $gold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            object-fit: cover;
+        }
+    }
+    .List_card-info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 70%;
+        background-color: $grayBlack;
+        padding-left: 15px;
+        color: rgb(250, 246, 246);
+
+        .List_card-info--twitter{
+            color: $gold;
+        }
+    }
+}
