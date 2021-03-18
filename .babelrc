@@ -2,15 +2,24 @@
 // babel-loader -> Loader of Webpack
 
 {
-    // ECMAscript and JSX
-    "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
+  // ECMAscript and JSX
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
     ],
-      // To use sintax class in React
-    "plugins": [
-        [
-          "@babel/plugin-proposal-class-properties"
-        ]
-    ]
+      "@babel/preset-react"
+  ],
+
+  // To use sintax class in React
+  "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties"
+      ]
+           
+  ]
 }

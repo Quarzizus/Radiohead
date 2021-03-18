@@ -5,6 +5,8 @@ import Target from '../components/Target'
 
 class ContainerHero extends React.Component {
     state = {
+        loading: false,
+        error: null,
         form: {
             firtsName: "",
             lastName: "",
@@ -13,7 +15,7 @@ class ContainerHero extends React.Component {
             twitter: "",
         }    
     }
-    clickHandler =(e)=>{
+    changeHandler =(e)=>{
         this.setState({
             form: {
                 // dejamos caer los valores anteriores
@@ -24,12 +26,41 @@ class ContainerHero extends React.Component {
             }    
         })
     }
+    submitHandler = async(e)=>{
+        e.preventDefault();
+
+        this.setState({
+            loading: true,
+            error: null
+        })
+        try {
+            await fetch('http://localhost:4001/Persons',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(this.state.form),
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                }
+            )
+            this.setState({
+                loading: false,
+            })    
+            
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error: error
+            })
+        }
+    }
+
     render(){
         return(
             <div className="ContainerHero">
                 <ContainerForm>           
                     <Target valuesForm={this.state.form}/>
-                    <Form onChange={this.clickHandler}/>
+                    <Form onChange={this.changeHandler} onSubmit={this.submitHandler}/>
                 </ContainerForm>
             </div>
         )

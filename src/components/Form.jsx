@@ -52,7 +52,11 @@ class Form extends React.Component {
                     <h4><a href="#">Terminos y condiciones</a></h4>
                 </article>
                     
-                <button onClick={this.sendHandler} className="Form_send">
+                <button 
+                    onClick={this.props.click}
+                    onSubmit={this.props.onSubmit}
+                    className="Form_send"
+                >
                     Send
                 </button>
             </form>

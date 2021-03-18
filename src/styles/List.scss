@@ -6,7 +6,7 @@
     justify-content: start;
     flex-direction: column;
     background: linear-gradient(to top right, rgb(220, 220, 220) ,rgb(26, 22, 22));
-    height: calc(100vh - 80px);
+    height: minmax(calc(100vh - 80px), auto);
     .List{
         width: 50%;
         display: flex;
