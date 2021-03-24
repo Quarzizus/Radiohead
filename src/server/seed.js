@@ -27,7 +27,9 @@ function createBadges(limit = 5) {
 
 function main() {
   const data = {
-    badges: createBadges(),
+    persons:{
+      badges: createBadges(),
+    }
   };
 
   fs.writeFileSync(

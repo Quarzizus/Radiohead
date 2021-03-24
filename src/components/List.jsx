@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemList from '../components/ItemList'
 import { Link } from 'react-router-dom'
+import Loader from './Loader'
 
 import '../styles/List.scss'
 
@@ -21,7 +22,7 @@ class List extends React.Component {
         })
 
         try {
-            const response = await fetch(`http://localhost:4001/Persons`)
+            const response = await fetch(`http://localhost:8081/persons`)
             const data = await response.json()
             this.setState({
                 loading: false,
@@ -44,7 +45,7 @@ class List extends React.Component {
 
     render(){
         if(this.state.loading == true){
-            return `Holi, estoy cargando`
+            return <Loader/>
         }
         
         console.log("Soy el render")
@@ -52,7 +53,7 @@ class List extends React.Component {
             <section className="container-List">
                 <div className="List">
                     <button className="List_button">
-                        <Link to="/registre" className="List_button-link"> Registre</Link>
+                        <Link to="/registre" className="List_button-link">Registre</Link>
                     </button>
                     <ItemList data={this.state.data}/>
                 </div>

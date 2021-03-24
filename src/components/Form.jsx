@@ -47,13 +47,7 @@ class Form extends React.Component {
                 <button onClick={this.sendHandler} className="Form_updateImage">
                     Image
                 </button>
-                <article className="Form_terms">
-                    <input type="checkbox"/>
-                    <h4><a href="#">Terminos y condiciones</a></h4>
-                </article>
-                    
                 <button 
-                    onClick={this.props.click}
                     onSubmit={this.props.onSubmit}
                     className="Form_send"
                 >

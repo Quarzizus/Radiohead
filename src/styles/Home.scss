@@ -3,7 +3,7 @@
 
 .Home{
     height: calc(100vh - 80px);
-    background: linear-gradient(to top right, rgb(220, 220, 220) ,rgb(26, 22, 22));
+    background: linear-gradient(to top right, rgb(8, 8, 8) ,rgb(26, 22, 22));
     display: flex;
     justify-content: center;
 
@@ -22,10 +22,10 @@
             letter-spacing: 4px;
             line-height: 90%;
             font-family: 'Fjalla One', sans-serif;
-
+            color: $gold; 
         }
         .Home_init-p{
-            color: white;
+            color: $font-color;
             line-height: 1.7;
             margin: 1.7rem;
             text-align: center;
@@ -37,7 +37,7 @@
             width: 90px;
             font-size: 17px;
             border: none;
-            background-color: $gold;
+            background-color: $font-color;
         }
 
     }

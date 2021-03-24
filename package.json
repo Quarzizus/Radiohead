@@ -6,21 +6,23 @@
   "scripts": {
     "start": "webpack-cli serve --open --mode development",
     "build": "webpack --mode production",
-    "server": "json-server --port 4001 --watch apiFake.json"
+    "server": "json-server --p  8081 --watch './src/server/apiFake.json' "
   },
   "author": "Miguel Vasquez",
   "license": "MIT",
   "dependencies": {
     "json-server": "^0.16.3",
     "md5": "^2.3.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-loading-skeleton": "^2.2.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
+    "@types/react-router-dom": "^5.1.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.1.2",

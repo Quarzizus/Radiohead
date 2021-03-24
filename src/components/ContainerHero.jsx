@@ -28,31 +28,6 @@ class ContainerHero extends React.Component {
     }
     submitHandler = async(e)=>{
         e.preventDefault();
-
-        this.setState({
-            loading: true,
-            error: null
-        })
-        try {
-            await fetch('http://localhost:4001/Persons',
-                {
-                    method: 'POST',
-                    body: JSON.stringify(this.state.form),
-                    headers: {
-                        "Content-type": "application/json"
-                    }
-                }
-            )
-            this.setState({
-                loading: false,
-            })    
-            
-        } catch (error) {
-            this.setState({
-                loading: false,
-                error: error
-            })
-        }
     }
 
     render(){
