@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/ItemList.scss'
+import Gravatar from '../components/Gravatar'
 
 class ItemList extends React.Component {
-    
-
+  
     render(){
         return(
              <div>
@@ -11,7 +11,7 @@ class ItemList extends React.Component {
                     return(
                         <article className="List_card" key={dato.id}>
                             <picture className="List_card--contain-img">
-                                <img src={dato.avatarUrl} alt=""/>
+                                <Gravatar email={dato.email} className="List_card--img" />
                             </picture>
                             <section className="List_card-info">
                                 <h4 className="List_card-info--name">{dato.firtsName}{dato.lastName}</h4>
