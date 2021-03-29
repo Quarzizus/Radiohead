@@ -2,6 +2,7 @@ import React from 'react'
 import ContainerForm from '../assets/ContainerForm'
 import Form from '../components/Form'
 import Target from '../components/Target'
+import api from '../api'
 
 class ContainerHero extends React.Component {
     state = {
@@ -28,6 +29,21 @@ class ContainerHero extends React.Component {
     }
     submitHandler = async(e)=>{
         e.preventDefault();
+        this.setState({
+            loading: true,
+            error:null
+        })
+        try {
+            await api.badges.create(this.state.form)
+            this.setState({
+                loading: false
+            })
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error: error
+            })
+        }
     }
 
     render(){

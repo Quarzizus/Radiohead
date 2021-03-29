@@ -18,23 +18,23 @@ class List extends React.Component {
     fetchData = async () => {
         this.setState({
             loading: true,
-            error: null,
         })
-
         try {
-            const response = await fetch(`http://localhost:8081/persons`)
+            const response = await fetch(`http://localhost:8081/badges`)
             const data = await response.json()
             this.setState({
-                loading: false,
                 data: {
-                    badges: data.badges
+                    badges: data
                 },
+                loading: false,
+                error: null, 
             })
+ 
             
         } catch (error) {
             this.setState({
-                error: error,
-                loading: false
+                loading: false,
+                error: error
             })
         }
     }

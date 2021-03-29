@@ -8,7 +8,8 @@ class Form extends React.Component {
     }
     render(){
         return(
-            <form className="Form" action="">
+                    
+                <form className="Form"  onSubmit={this.props.onSubmit} >
                 <label>Firts Name</label>
                 <input 
                     onChange={this.props.onChange}
@@ -48,7 +49,6 @@ class Form extends React.Component {
                     Image
                 </button>
                 <button 
-                    onSubmit={this.props.onSubmit}
                     className="Form_send"
                 >
                     Send

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-cli serve --open --mode development",
     "build": "webpack --mode production",
-    "server": "json-server --p  8081 --watch './src/server/apiFake.json' "
+    "server": "json-server --p  8081 --watch 'server/db.json' "
   },
   "author": "Miguel Vasquez",
   "license": "MIT",
