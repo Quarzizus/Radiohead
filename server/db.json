@@ -465,6 +465,30 @@
       "email": "pepe@gmail.com",
       "twitter": "@pepeperez",
       "id": "IEyYi6N"
+    },
+    {
+      "firtsName": "Pepe",
+      "lastName": "Mujica",
+      "jobTitle": "President",
+      "email": "pepemujica@pepe.com",
+      "twitter": "@mujica",
+      "id": "liq896m"
+    },
+    {
+      "firtsName": "Gandhi",
+      "lastName": "mahoma",
+      "jobTitle": "leader",
+      "email": "paz@correo.itm",
+      "twitter": "@paxd",
+      "id": "8t4DLn5"
+    },
+    {
+      "firtsName": "Jimena ",
+      "lastName": "Vargas",
+      "jobTitle": "Tester Enginner ",
+      "email": "menaamor@gmail.com",
+      "twitter": "@menamor",
+      "id": "jG1vAsH"
     }
   ]
 }

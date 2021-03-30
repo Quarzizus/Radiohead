@@ -1,31 +1,29 @@
-@import '../styles/variables/Variables.scss';
+@import "../styles/variables/Variables.scss";
 
-.container-List{
+.container-List {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  background: linear-gradient(to top right, rgb(8, 8, 8), rgb(17, 16, 16));
+  height: minmax(calc(100vh - 80px), auto);
+  .List {
+    width: 50%;
     display: flex;
-    align-items: center;
-    justify-content: start;
     flex-direction: column;
-    background: linear-gradient(to top right, rgb(8, 8, 8) ,rgb(17, 16, 16));
-    height: minmax(calc(100vh - 80px), auto);
-    .List{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        .List_button{
-            width: 20%;
-            padding: 10px;
-            margin-top: 15px;
-            border-radius: 15px;
-            background-color: $gold;
-            border: none;
-            align-self: flex-end;
-            color: white;
-            .List_button-link{
-                text-decoration: none;
-                color: white;
-            }
-        }
-   
+    .List_button {
+      width: 20%;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 15px;
+      background-color: $gold;
+      border: none;
+      align-self: flex-end;
+      color: white;
+      .List_button-link {
+        text-decoration: none;
+        color: white;
+      }
     }
-    
+  }
 }

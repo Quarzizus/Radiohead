@@ -1,53 +1,52 @@
-@import '../styles/variables/Variables.scss';
+@import "../styles/variables/Variables.scss";
 
-.Form{
-    width: 30%;
-    background-color: $grayBlack;
-    height: 85%;
+.Form {
+  width: 30%;
+  background-color: $grayBlack;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  padding: 35px 40px;
+  justify-content: space-evenly;
+  color: rgb(209, 192, 192);
+
+  input {
+    background-color: $grayWhite;
+    border: none;
+    padding: 10px 15px;
+    color: $font-color;
+  }
+  ::placeholder {
+    color: $font-color;
+  }
+  .Form_terms {
     display: flex;
-    flex-direction: column;
-    padding: 35px 40px;
-    justify-content: space-evenly;
-    color: rgb(209, 192, 192);
+    align-self: center;
+    h4 {
+      margin-left: 3px;
+      font-size: 12px;
+      a {
+        color: $gold;
+      }
+    }
+  }
 
-    input{
-        background-color: $grayWhite;
-        border: none;
-        padding: 10px 15px;
-        color: $font-color;
-    }
-    ::placeholder{
-        color: $font-color;
-    }
-    .Form_terms{
-        display:flex;
-        align-self: center;
-        h4{
-            margin-left: 3px;
-            font-size: 12px;
-            a{
-                color: $gold;
-            }
-        }
-    }
- 
-    button{
-        margin-top: 15px;
-        padding: 10px;
-        width: 30%;
-        border: none;
-        border-radius: 0;
-        align-self: center;
-    }
+  button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 30%;
+    border: none;
+    border-radius: 0;
+    align-self: center;
+  }
 
-    .Form_updateImage{
-        background-color: rgb(80, 90, 87);
-        color: $font-color;
-    }
+  .Form_updateImage {
+    background-color: rgb(80, 90, 87);
+    color: $font-color;
+  }
 
-    .Form_send{
-        background-color: $gold;
-        color: black;
-    }
-
+  .Form_send {
+    background-color: $gold;
+    color: black;
+  }
 }

@@ -1,6 +1,10 @@
-.containerForm{
-    display: flex;
+.containerForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100vh - 80px);
+  .loader-img {
     align-items: center;
-    justify-content: space-around;
-    height: calc(100vh - 80px);
+    justify-content: center;
+  }
 }

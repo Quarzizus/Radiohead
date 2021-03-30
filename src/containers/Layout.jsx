@@ -1,13 +1,13 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from "react";
+import Header from "../components/Header";
 
 const Layout = (props) => {
-    return(
-        <React.Fragment>
-            <Header/>
-            {props.children}
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      <Header />
+      {props.children}
+    </React.Fragment>
+  );
+};
 
-export default Layout
+export default Layout;

@@ -1,13 +1,16 @@
-@import '../styles/variables/Variables.scss';
+@import "../styles/variables/Variables.scss";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font;
 }
 
-body{
-    background: black;
+body {
+  background: black;
+  .loader-img {
+    align-self: center;
+    justify-self: center;
+  }
 }
-

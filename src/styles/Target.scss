@@ -1,65 +1,63 @@
-@import '../styles/variables/Variables.scss';
+@import "../styles/variables/Variables.scss";
 
-.Target{
-    width: 40%;
-    height: 90%;
+.Target {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  .Target_header {
+    background-color: $gold;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Target_profile {
+    background-color: $grayBlack;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .Target_profile_container-img {
+      width: 30%;
+      .Target_profile-img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .Target_profile-fullname {
+      width: 50%;
+      color: $font-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        text-transform: uppercase;
+      }
+    }
+  }
+  .Target_info {
+    background-color: $grayWhite;
+    height: 30%;
     display: flex;
     flex-direction: column;
-    .Target_header{
-        background-color: $gold;
-        height: 25%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    align-items: center;
+    justify-content: center;
+    color: $gold;
 
+    h2 {
+      color: $font-color;
+      font-weight: bold;
+      text-transform: capitalize;
     }
-    .Target_profile{
-        background-color: $grayBlack;
-        height: 40%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        .Target_profile_container-img{
-            width: 30%;
-            .Target_profile-img{
-                width: 100%;  
-                object-fit: contain;
-            }  
-        }
- 
-        .Target_profile-fullname{
-            width: 50%;
-            color: $font-color;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            h2{
-                text-transform: uppercase;
-            }
-        }
-    }
-    .Target_info{
-        background-color: $grayWhite;
-        height: 30%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: $gold;
-        
-        h2{
-            color: $font-color;
-            font-weight: bold;
-            text-transform: capitalize;
-        }
-    }
-    .Target_footer{
-        background-color: $gold;
-        height: 15%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    }
+  }
+  .Target_footer {
+    background-color: $gold;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

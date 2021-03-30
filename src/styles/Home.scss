@@ -1,44 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-@import '../styles/variables/Variables.scss';
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import "../styles/variables/Variables.scss";
 
-.Home{
-    height: calc(100vh - 80px);
-    background: linear-gradient(to top right, rgb(8, 8, 8) ,rgb(26, 22, 22));
+.Home {
+  height: calc(100vh - 80px);
+  background: linear-gradient(to top right, rgb(8, 8, 8), rgb(26, 22, 22));
+  display: flex;
+  justify-content: center;
+
+  .Home_init {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    width: 40%;
+    align-items: center;
 
-    .Home_init{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 40%;
-        align-items: center;
-
-        .Home_init-title{
-            color: rgb(12, 12, 12);
-            text-transform: uppercase;
-            font-size: 110px;
-            text-align: center;
-            letter-spacing: 4px;
-            line-height: 90%;
-            font-family: 'Fjalla One', sans-serif;
-            color: $gold; 
-        }
-        .Home_init-p{
-            color: $font-color;
-            line-height: 1.7;
-            margin: 1.7rem;
-            text-align: center;
-            width: 70%;
-        }
-        .Home_init-button{
-            padding: 15px 5px;
-            color: black;
-            width: 90px;
-            font-size: 17px;
-            border: none;
-            background-color: $font-color;
-        }
-
+    .Home_init-title {
+      color: rgb(12, 12, 12);
+      text-transform: uppercase;
+      font-size: 110px;
+      text-align: center;
+      letter-spacing: 4px;
+      line-height: 90%;
+      font-family: "Fjalla One", sans-serif;
+      color: $gold;
     }
+    .Home_init-p {
+      color: $font-color;
+      line-height: 1.7;
+      margin: 1.7rem;
+      text-align: center;
+      width: 70%;
+    }
+    .Home_init-button {
+      padding: 15px 5px;
+      color: black;
+      width: 90px;
+      font-size: 17px;
+      border: none;
+      background-color: $font-color;
+    }
+  }
 }
