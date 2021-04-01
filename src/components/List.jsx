@@ -54,6 +54,7 @@ class List extends React.Component {
           </button>
           {this.state.data.badges.map((dato) => (
             <ItemList
+              key={dato.id}
               id={dato.id}
               firstName={dato.firstName}
               lastName={dato.lastName}

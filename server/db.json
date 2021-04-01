@@ -449,6 +449,22 @@
       "jobTitle": "Legacy Brand Director",
       "twitter": "Fredazizu",
       "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
+    },
+    {
+      "firstName": "Pepe",
+      "lastName": "Perez",
+      "jobTitle": "Backend Developer",
+      "email": "pepe@gmail.com",
+      "twitter": "@pepeperez",
+      "id": "bky3qGW"
+    },
+    {
+      "firstName": "hamilton",
+      "lastName": "white",
+      "jobTitle": "Tester Enginner",
+      "email": "hamilton@gmail.com",
+      "twitter": "@hamilton",
+      "id": "nFMZvzD"
     }
   ]
 }

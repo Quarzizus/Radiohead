@@ -3,14 +3,15 @@ import ContainerForm from "../assets/ContainerForm";
 import LoaderPost from "../components/LoaderPost";
 import Form from "../components/Form";
 import Target from "../components/Target";
-import api from "../api";
 
 class ItemEdit extends React.Component {
   state = {
-    // Start us with a fetch
+    // Start us with a fetch true
     loading: true,
     error: null,
     form: {
+      id: "",
+      avatarUrl: "",
       firtsName: "",
       lastName: "",
       jobTitle: "",
@@ -31,21 +32,13 @@ class ItemEdit extends React.Component {
   };
 
   fetchData = async (e) => {
-    this.setState({
-      loading: true,
-      error: null,
-    });
+    const itemId = this.props.match.params.itemId;
     try {
-      const itemId = this.props.match.params.itemId;
-      const response = await fetch(`http://localhost/8080/list/${itemId}`, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-      const data = response.json();
+      const response = await fetch(`http://localhost:8081/badges/${itemId}`);
+      const data = await response.json();
       this.setState({
         loading: false,
+        error: null,
         form: data,
       });
     } catch (error) {

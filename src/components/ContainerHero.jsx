@@ -3,7 +3,6 @@ import ContainerForm from "../assets/ContainerForm";
 import LoaderPost from "../components/LoaderPost";
 import Form from "../components/Form";
 import Target from "../components/Target";
-import api from "../api";
 
 class ContainerHero extends React.Component {
   state = {
@@ -17,6 +16,7 @@ class ContainerHero extends React.Component {
       twitter: "",
     },
   };
+  //INPUT
   changeHandler = (e) => {
     this.setState({
       form: {
@@ -28,6 +28,7 @@ class ContainerHero extends React.Component {
       },
     });
   };
+  //POST
   submitHandler = async (e) => {
     e.preventDefault();
     this.setState({
@@ -44,10 +45,10 @@ class ContainerHero extends React.Component {
     };
     try {
       await fetch(`http://localhost:8081/badges`, config);
-      this.props.history.push("/list");
       this.setState({
         loading: false,
       });
+      this.props.history.push("/list");
     } catch (error) {
       this.setState({
         loading: false,

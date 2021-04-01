@@ -33,7 +33,7 @@ const api = {
       });
     },
     read(itemId) {
-      return callApi(`/list/${itemId}`);
+      return callApi(`/badges/${itemId}`);
     },
     update(itemId, updates) {
       return callApi(`/badges/${itemId}`, {
