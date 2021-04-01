@@ -44,8 +44,6 @@ class List extends React.Component {
     if (this.state.loading == true) {
       return <Loader />;
     }
-
-    console.log("Soy el render");
     return (
       <section className="container-List">
         <div className="List">
@@ -54,7 +52,15 @@ class List extends React.Component {
               Registre
             </Link>
           </button>
-          <ItemList data={this.state.data} />
+          {this.state.data.badges.map((dato) => {
+            <ItemList
+              firtsName={dato.firtsName}
+              lastName={dato.lastName}
+              twitter={dato.twitter}
+              jobTitle={dato.jobTitle}
+              email={dato.email}
+            />;
+          })}
         </div>
       </section>
     );

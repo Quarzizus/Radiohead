@@ -1,10 +1,15 @@
 @import "../styles/variables/Variables.scss";
 
+.Link {
+  text-decoration: none;
+}
 .List_card {
   margin-top: 10px;
   color: black;
   display: flex;
   height: 130px;
+  text-decoration: none;
+
   .List_card--contain-img {
     width: 30%;
     background-color: $gold;
@@ -25,6 +30,9 @@
     padding-left: 15px;
     color: rgb(250, 246, 246);
 
+    h4 {
+      text-decoration: none;
+    }
     .List_card-info--twitter {
       color: $gold;
     }

@@ -32,18 +32,18 @@ const api = {
         body: JSON.stringify(badge),
       });
     },
-    read(badgeId) {
-      return callApi(`/badges/${badgeId}`);
+    read(itemId) {
+      return callApi(`/list/${itemId}`);
     },
-    update(badgeId, updates) {
-      return callApi(`/badges/${badgeId}`, {
+    update(itemId, updates) {
+      return callApi(`/badges/${itemId}`, {
         method: "PUT",
         body: JSON.stringify(updates),
       });
     },
     // Lo hubiera llamado `delete`, pero `delete` es un keyword en JavaScript asi que no es buena idea :P
-    remove(badgeId) {
-      return callApi(`/badges/${badgeId}`, {
+    remove(itemId) {
+      return callApi(`/badges/${itemId}`, {
         method: "DELETE",
       });
     },

@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import Home from "../components/Home";
 import ContainerHero from "../components/ContainerHero";
 import ContainerList from "../components/ContainerList";
+import ItemEdit from "../components/ItemEdit";
 import "../styles/App.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/list" component={ContainerList} />
           <Route exact path="/registre" component={ContainerHero} />
+          <Route exact path="/list/:itemId/edit" component={ItemEdit} />
         </Switch>
       </Layout>
     </BrowserRouter>

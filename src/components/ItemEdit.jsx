@@ -5,9 +5,10 @@ import Form from "../components/Form";
 import Target from "../components/Target";
 import api from "../api";
 
-class ContainerHero extends React.Component {
+class ItemEdit extends React.Component {
   state = {
-    loading: false,
+    // Start us with a fetch
+    loading: true,
     error: null,
     form: {
       firtsName: "",
@@ -28,25 +29,24 @@ class ContainerHero extends React.Component {
       },
     });
   };
-  submitHandler = async (e) => {
-    e.preventDefault();
+
+  fetchData = async (e) => {
     this.setState({
       loading: true,
       error: null,
     });
-    const config = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(this.state.form),
-    };
     try {
-      await fetch(`http://localhost:8081/badges`, config);
-      this.props.history.push("/list");
+      const itemId = this.props.match.params.itemId;
+      const response = await fetch(`http://localhost/8080/list/${itemId}`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      const data = response.json();
       this.setState({
         loading: false,
+        form: data,
       });
     } catch (error) {
       this.setState({
@@ -55,11 +55,14 @@ class ContainerHero extends React.Component {
       });
     }
   };
+  componentDidMount() {
+    this.fetchData();
+  }
 
   render() {
     if (this.state.loading == true) {
       return (
-        <div className="ContainerHero">
+        <div className="ItemEdit">
           <ContainerForm>
             <LoaderPost />
           </ContainerForm>
@@ -67,7 +70,7 @@ class ContainerHero extends React.Component {
       );
     } else {
       return (
-        <div className="ContainerHero">
+        <div>
           <ContainerForm>
             <Target valuesForm={this.state.form} />
             <Form onChange={this.changeHandler} onSubmit={this.submitHandler} />
@@ -78,4 +81,4 @@ class ContainerHero extends React.Component {
   }
 }
 
-export default ContainerHero;
+export default ItemEdit;
