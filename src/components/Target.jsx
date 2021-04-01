@@ -15,7 +15,7 @@ class Target extends React.Component {
             />
           </picture>
           <div className="Target_profile-fullname">
-            <h2>{this.props.valuesForm.firtsName || "firts name"}</h2>
+            <h2>{this.props.valuesForm.firstName || "first name"}</h2>
             <h2>{this.props.valuesForm.lastName || "last name"}</h2>
           </div>
         </article>

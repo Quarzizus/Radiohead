@@ -10,7 +10,7 @@ class ContainerHero extends React.Component {
     loading: false,
     error: null,
     form: {
-      firtsName: "",
+      firstName: "",
       lastName: "",
       jobTitle: "",
       email: "",

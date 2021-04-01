@@ -52,15 +52,16 @@ class List extends React.Component {
               Registre
             </Link>
           </button>
-          {this.state.data.badges.map((dato) => {
+          {this.state.data.badges.map((dato) => (
             <ItemList
-              firtsName={dato.firtsName}
+              id={dato.id}
+              firstName={dato.firstName}
               lastName={dato.lastName}
+              email={dato.email}
               twitter={dato.twitter}
               jobTitle={dato.jobTitle}
-              email={dato.email}
-            />;
-          })}
+            />
+          ))}
         </div>
       </section>
     );

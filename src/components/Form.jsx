@@ -11,7 +11,7 @@ class Form extends React.Component {
         <label>Firts Name</label>
         <input
           onChange={this.props.onChange}
-          name="firtsName"
+          name="firstName"
           type="text"
           //value={this.state.firtsName}
           placeholder="Pepe"
