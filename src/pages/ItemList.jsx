@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/ItemList.scss";
-import Gravatar from "../components/Gravatar";
+import Gravatar from "./Gravatar";
 import { Link } from "react-router-dom";
 
 class ItemList extends React.Component {

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Target.scss";
-import Gravatar from "../components/Gravatar";
+import Gravatar from "./Gravatar";
 
 class Target extends React.Component {
   render() {
