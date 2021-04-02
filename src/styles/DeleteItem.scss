@@ -1,0 +1,33 @@
+@import "../styles/variables/Variables.scss";
+
+.DeleteItem_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  .DeleteItem_title {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+  .DeleteItem_p {
+    font-size: 1rem;
+  }
+  .DeleteItem_container-buttons {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    button {
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .DeleteItem-cancel {
+      color: $font-color;
+      background-color: $grayWhite;
+    }
+    .DeleteItem-delete {
+      background-color: $gold;
+    }
+  }
+}
