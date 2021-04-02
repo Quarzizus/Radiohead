@@ -1,7 +1,7 @@
 import React from "react";
-import ItemList from "../components/ItemList";
+import ItemList from "./ItemList";
 import { Link } from "react-router-dom";
-import Loader from "../components/Loader";
+import Loader from "../assets/Loader";
 
 import "../styles/List.scss";
 

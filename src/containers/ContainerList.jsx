@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../components/List";
+import List from "../pages/List";
 
 class ContainerList extends React.Component {
   render() {

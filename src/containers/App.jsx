@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "./Layout";
-import Home from "../components/Home";
-import ContainerHero from "../components/ContainerHero";
-import ContainerList from "../components/ContainerList";
-import ItemEdit from "../components/ItemEdit";
-import ItemDetails from "../components/ItemDetails";
+import ContainerHero from "./ContainerHero";
+import ContainerList from "./ContainerList";
+import Home from "../pages/Home";
+import ItemEdit from "../pages/ItemEdit";
+import ItemDetails from "../pages/ItemDetails";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../styles/App.scss";
 

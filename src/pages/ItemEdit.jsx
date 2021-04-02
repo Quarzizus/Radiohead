@@ -1,6 +1,6 @@
 import React from "react";
-import ContainerForm from "../assets/ContainerForm";
-import LoaderPost from "../components/LoaderPost";
+import ContainerForm from "../containers/ContainerForm";
+import LoaderPost from "../assets/LoaderPost";
 import Form from "../components/Form";
 import Target from "../components/Target";
 

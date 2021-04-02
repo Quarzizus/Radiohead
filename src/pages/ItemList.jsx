@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/ItemList.scss";
-import Gravatar from "./Gravatar";
+import Gravatar from "../components/Gravatar";
 import { Link } from "react-router-dom";
+import "../styles/ItemList.scss";
 
 class ItemList extends React.Component {
   render() {

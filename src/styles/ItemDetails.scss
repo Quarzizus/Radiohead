@@ -8,14 +8,21 @@
   padding: 7px 20px;
   background-color: $grayBlack;
   width: 30%;
-  height: 70%;
+  height: 40%;
   h2 {
-    font-size: 14px;
+    font-size: 20px;
+    text-transform: uppercase;
     color: $font-color;
+  }
+  .Actions_container-buttons {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
   }
   button {
     cursor: pointer;
     border: none;
+    min-width: 65px;
     padding: 10px 15px;
   }
   .Actions_button-edit {
