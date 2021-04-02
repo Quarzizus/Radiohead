@@ -70,8 +70,18 @@ class ContainerHero extends React.Component {
       return (
         <div className="ContainerHero">
           <ContainerForm>
-            <Target valuesForm={this.state.form} />
-            <Form onChange={this.changeHandler} onSubmit={this.submitHandler} />
+            <Target
+              firstName={this.state.form.firstName}
+              lastName={this.state.form.lastName}
+              twitter={this.state.form.twitter}
+              email={this.state.form.email}
+              jobTitle={this.state.form.jobTitle}
+            />
+            <Form
+              onChange={this.changeHandler}
+              onSubmit={this.submitHandler}
+              message={`Send`}
+            />
           </ContainerForm>
         </div>
       );

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class ItemList extends React.Component {
   render() {
     return (
-      <Link to={`/list/${this.props.id}/edit`} className="Link">
+      <Link to={`/list/${this.props.id}`} className="Link">
         <article className="List_card">
           <picture className="List_card--contain-img">
             <Gravatar email={this.props.email} className="List_card--img" />

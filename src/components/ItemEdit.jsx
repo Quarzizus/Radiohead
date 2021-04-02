@@ -30,7 +30,35 @@ class ItemEdit extends React.Component {
       },
     });
   };
-
+  submitHandler = async (e) => {
+    e.preventDefault();
+    this.setState({
+      loading: true,
+      error: null,
+    });
+    const itemId = this.props.match.params.itemId;
+    const putConfig = {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state.form),
+    };
+    try {
+      await fetch(`http://localhost:8081/badges/${itemId}`, putConfig);
+      this.setState({
+        loading: false,
+        error: null,
+      });
+      this.props.history.push("/list");
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error,
+      });
+    }
+  };
   fetchData = async (e) => {
     const itemId = this.props.match.params.itemId;
     try {
@@ -65,8 +93,23 @@ class ItemEdit extends React.Component {
       return (
         <div>
           <ContainerForm>
-            <Target valuesForm={this.state.form} />
-            <Form onChange={this.changeHandler} onSubmit={this.submitHandler} />
+            <Target
+              firstName={this.state.form.firstName}
+              lastName={this.state.form.lastName}
+              jobTitle={this.state.form.jobTitle}
+              twitter={this.state.form.twitter}
+              email={this.state.form.email}
+            />
+            <Form
+              onChange={this.changeHandler}
+              onSubmit={this.submitHandler}
+              message={`Save changes`}
+              firtsName={this.state.form.firtsName}
+              lastName={this.state.form.lastName}
+              twitter={this.state.form.twitter}
+              email={this.state.form.email}
+              jobTitle={this.state.form.jobTitle}
+            />
           </ContainerForm>
         </div>
       );

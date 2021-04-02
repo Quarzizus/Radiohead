@@ -1,0 +1,29 @@
+@import "../styles/variables/Variables.scss";
+
+.Actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 7px 20px;
+  background-color: $grayBlack;
+  width: 30%;
+  height: 70%;
+  h2 {
+    font-size: 14px;
+    color: $font-color;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+  }
+  .Actions_button-edit {
+    background-color: $gold;
+    color: $font-color;
+  }
+  .Actions_button-delete {
+    background-color: rgb(199, 30, 30);
+    color: $font-color;
+  }
+}

@@ -52,7 +52,7 @@ class List extends React.Component {
               Registre
             </Link>
           </button>
-          {this.state.data.badges.map((dato) => (
+          {this.state.data.badges.reverse().map((dato) => (
             <ItemList
               key={dato.id}
               id={dato.id}
