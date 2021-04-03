@@ -51,7 +51,7 @@ class Form extends React.Component {
         <button onClick={this.sendHandler} className="Form_updateImage">
           Image
         </button>
-        <button className="Form_send">{this.props.message}</button>
+        <button className="Form_send">{props.message}</button>
       </form>
     );
   }
