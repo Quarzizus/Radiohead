@@ -1,5 +1,5 @@
 import React from "react";
-import Gravatar from "../components/Gravatar";
+import Gravatar from "./Gravatar";
 import { Link } from "react-router-dom";
 import "../styles/ItemList.scss";
 

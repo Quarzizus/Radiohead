@@ -1,0 +1,16 @@
+@import "../styles/variables/Variables.scss";
+
+.Search_container {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .Search_input {
+    width: 50%;
+    padding: 10px 15px;
+    border: none;
+  }
+  .Search_input:focus {
+    outline: none;
+  }
+}
