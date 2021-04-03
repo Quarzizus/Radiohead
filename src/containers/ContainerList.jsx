@@ -1,62 +1,73 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import ItemList from "../components/ItemList";
 import Search from "../components/Search";
 import List from "../pages/List";
 
-class ContainerList extends React.Component {
-  state = {
-    loading: true,
-    data: {
-      badges: [],
-    },
-    error: null,
-  };
+const ContainerList = (props) => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({ badges: [] });
+  const [error, setError] = useState(null);
+  const [value, setValue] = useState("");
+  const [filtered, setFiltered] = useState(data.badges);
 
-  fetchData = async () => {
-    this.setState({
-      loading: true,
+  useMemo(() => {
+    const filteredItems = data.badges.filter((item) => {
+      return `${item.firstName} ${item.lastName}`
+        .toLowerCase()
+        .includes(value.toLowerCase());
     });
-    try {
-      const response = await fetch(`http://localhost:8081/badges`);
-      const data = await response.json();
-      this.setState({
-        data: {
-          badges: data,
-        },
-        loading: false,
-        error: null,
-      });
-    } catch (error) {
-      this.setState({
-        loading: false,
-        error: error,
-      });
-    }
-  };
+    setFiltered(filteredItems);
+  }, [data.badges, value]);
 
-  componentDidMount() {
-    this.fetchData();
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`http://localhost:8081/badges`);
+        const data = await response.json();
+        setLoading(false);
+        setData({ badges: data });
+      } catch (error) {
+        setLoading(false), setError(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (filtered.length == 0) {
+    <div className="containerList">
+      <Search
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+      <List loading={loading}></List>
+    </div>;
   }
-  render() {
-    return (
-      <div className="containerList">
-        <Search />
-        <List loading={this.state.loading}>
-          {this.state.data.badges.reverse().map((dato) => (
-            <ItemList
-              key={dato.id}
-              id={dato.id}
-              firstName={dato.firstName}
-              lastName={dato.lastName}
-              email={dato.email}
-              twitter={dato.twitter}
-              jobTitle={dato.jobTitle}
-            />
-          ))}
-        </List>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="containerList">
+      <Search
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+      <List loading={loading}>
+        {filtered.map((dato) => (
+          <ItemList
+            key={dato.id}
+            id={dato.id}
+            firstName={dato.firstName}
+            lastName={dato.lastName}
+            email={dato.email}
+            twitter={dato.twitter}
+            jobTitle={dato.jobTitle}
+          />
+        ))}
+      </List>
+    </div>
+  );
+};
 
 export default ContainerList;
