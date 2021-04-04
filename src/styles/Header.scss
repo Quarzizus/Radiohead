@@ -7,9 +7,10 @@
   align-items: center;
   justify-content: space-around;
   height: 80px;
-  .Header_title {
-    color: $gold;
-    text-decoration: none;
+  .container-banana {
+    .Header_icon {
+      width: 70;
+    }
   }
   .Header_menu {
     list-style: none;

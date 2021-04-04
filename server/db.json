@@ -12,7 +12,7 @@
     {
       "id": "63c03386-33a2-4512-9ac1-354ad7bec5e9",
       "firstName": "Daphney",
-      "lastName": "Torphy",
+      "lastName": "Torphies",
       "email": "Ron61@hotmail.com",
       "jobTitle": "National Markets Officer",
       "twitter": "DaphneyTorphy96105",
@@ -431,6 +431,46 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "Miguel",
+      "lastName": "Vasquez",
+      "jobTitle": "Frontend Developer",
+      "email": "angelzizu06@gmail.com",
+      "twitter": "@quarzizus",
+      "id": "RHTxrhg"
+    },
+    {
+      "firstName": "Pepe",
+      "lastName": "Perez",
+      "jobTitle": "Backend Developer",
+      "email": "pepe@gmail.com",
+      "twitter": "@pepe",
+      "id": "mi4DsLQ"
+    },
+    {
+      "firstName": "Freddy",
+      "lastName": "Vega",
+      "jobTitle": "Backend Developer",
+      "email": "juancitoarango10@hotmail.com",
+      "twitter": "@freddier",
+      "id": "hptKcXM"
+    },
+    {
+      "firstName": "Freddy",
+      "lastName": "Perez",
+      "jobTitle": "Backend Developer",
+      "email": "pepe123@gmail.com",
+      "twitter": "@freddier88",
+      "id": "eVXzJOO"
+    },
+    {
+      "firstName": "Jimena",
+      "lastName": "Vargas",
+      "jobTitle": "Ingeniera Ambiental",
+      "email": "menamor@gmail.com",
+      "twitter": "@jimena_44",
+      "id": "R2W4NaZ"
     }
   ]
 }

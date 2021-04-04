@@ -12,7 +12,6 @@ const Modal = (props) => {
         <button onClick={props.onClose} className="Modal_options-button">
           X
         </button>
-        {/* vendran más hijos */}
         {props.children}
       </section>
     </article>,

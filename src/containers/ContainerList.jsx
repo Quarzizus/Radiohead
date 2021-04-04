@@ -21,14 +21,14 @@ const ContainerList = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       try {
         const response = await fetch(`http://localhost:8081/badges`);
         const data = await response.json();
         setLoading(false);
         setData({ badges: data });
       } catch (error) {
-        setLoading(false), setError(error);
+        setLoading(false);
+        setError(error);
       }
     };
     fetchData();

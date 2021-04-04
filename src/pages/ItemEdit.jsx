@@ -1,120 +1,93 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ContainerForm from "../containers/ContainerForm";
 import LoaderPost from "../assets/LoaderPost";
 import Form from "../components/Form";
 import Target from "../components/Target";
 
-class ItemEdit extends React.Component {
-  state = {
-    // Start us with a fetch true
-    loading: true,
-    error: null,
-    form: {
-      id: "",
-      avatarUrl: "",
-      firtsName: "",
-      lastName: "",
-      jobTitle: "",
-      email: "",
-      twitter: "",
-    },
+const ItemEdit = (props) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [form, setForm] = useState({
+    id: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    jobTitle: "",
+    twitter: "",
+    avatarUrl: "",
+  });
+
+  const changeHandler = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
-  changeHandler = (e) => {
-    this.setState({
-      form: {
-        // dejamos caer los valores anteriores
-        ...this.state.form,
-        // y los sobreescribimos,
-        // trabajando con corchetes y variables
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-  submitHandler = async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    this.setState({
-      loading: true,
-      error: null,
-    });
-    const itemId = this.props.match.params.itemId;
+    setLoading(true);
+    setError(null);
+    const itemId = props.match.params.itemId;
     const putConfig = {
       method: "PUT",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.form),
+      body: JSON.stringify(form),
     };
     try {
       await fetch(`http://localhost:8081/badges/${itemId}`, putConfig);
-      this.setState({
-        loading: false,
-        error: null,
-      });
-      this.props.history.push("/list");
+      setLoading(false);
+      props.history.push("/list");
     } catch (error) {
-      this.setState({
-        loading: false,
-        error: error,
-      });
+      setLoading(false);
+      setError(error);
     }
   };
-  fetchData = async (e) => {
-    const itemId = this.props.match.params.itemId;
-    try {
-      const response = await fetch(`http://localhost:8081/badges/${itemId}`);
-      const data = await response.json();
-      this.setState({
-        loading: false,
-        error: null,
-        form: data,
-      });
-    } catch (error) {
-      this.setState({
-        loading: false,
-        error: error,
-      });
-    }
-  };
-  componentDidMount() {
-    this.fetchData();
-  }
 
-  render() {
-    if (this.state.loading == true) {
-      return (
-        <div className="ItemEdit">
-          <ContainerForm>
-            <LoaderPost />
-          </ContainerForm>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <ContainerForm>
-            <Target
-              firstName={this.state.form.firstName}
-              lastName={this.state.form.lastName}
-              jobTitle={this.state.form.jobTitle}
-              twitter={this.state.form.twitter}
-              email={this.state.form.email}
-            />
-            <Form
-              onChange={this.changeHandler}
-              onSubmit={this.submitHandler}
-              message={`Save changes`}
-              firtsName={this.state.form.firtsName}
-              lastName={this.state.form.lastName}
-              twitter={this.state.form.twitter}
-              email={this.state.form.email}
-              jobTitle={this.state.form.jobTitle}
-            />
-          </ContainerForm>
-        </div>
-      );
-    }
-  }
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      const itemId = props.match.params.itemId;
+      try {
+        const response = await fetch(`http://localhost:8081/badges/${itemId}`);
+        const data = await response.json();
+        setForm(data);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setError(error);
+      }
+    };
+    fetchData();
+  }, []);
 
+  if (loading == true) {
+    <div className="ItemEdit">
+      <ContainerForm>
+        <LoaderPost />
+      </ContainerForm>
+    </div>;
+  }
+  return (
+    <div>
+      <ContainerForm>
+        <Target
+          firstName={form.firstName}
+          lastName={form.lastName}
+          jobTitle={form.jobTitle}
+          twitter={form.twitter}
+          email={form.email}
+        />
+        <Form
+          onChange={changeHandler}
+          onSubmit={submitHandler}
+          firstName={form.firstName}
+          lastName={form.lastName}
+          twitter={form.twitter}
+          email={form.email}
+          jobTitle={form.jobTitle}
+          message={`Save changes`}
+        />
+      </ContainerForm>
+    </div>
+  );
+};
 export default ItemEdit;
