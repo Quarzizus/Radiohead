@@ -43,30 +43,45 @@ const ContainerHero = (props) => {
   };
 
   if (loading == true) {
-    <div className="ContainerHero">
-      <ContainerForm>
-        <LoaderPost />
-      </ContainerForm>
-    </div>;
+    return (
+      <div className="ContainerHero">
+        <ContainerForm>
+          <LoaderPost />
+        </ContainerForm>
+      </div>
+    );
+  } else if (window.matchMedia("(min-width:720px)").matches) {
+    return (
+      <div className="ContainerHero">
+        <ContainerForm>
+          <Target
+            firstName={form.firstName}
+            lastName={form.lastName}
+            twitter={form.twitter}
+            email={form.email}
+            jobTitle={form.jobTitle}
+          />
+          <Form
+            onChange={changeHandler}
+            onSubmit={submitHandler}
+            message={`Send`}
+          />
+        </ContainerForm>
+      </div>
+    );
+  } else {
+    return (
+      <div className="ContainerHero">
+        <ContainerForm>
+          <Form
+            onChange={changeHandler}
+            onSubmit={submitHandler}
+            message={`Send`}
+          />
+        </ContainerForm>
+      </div>
+    );
   }
-  return (
-    <div className="ContainerHero">
-      <ContainerForm>
-        <Target
-          firstName={form.firstName}
-          lastName={form.lastName}
-          twitter={form.twitter}
-          email={form.email}
-          jobTitle={form.jobTitle}
-        />
-        <Form
-          onChange={changeHandler}
-          onSubmit={submitHandler}
-          message={`Send`}
-        />
-      </ContainerForm>
-    </div>
-  );
 };
 
 export default ContainerHero;

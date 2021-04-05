@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Home.scss";
+import HomeAside from "../images/RadioheadHome.jpg";
 import { Link } from "react-router-dom";
 
 const useIncreaseCount = (max) => {
@@ -13,11 +14,14 @@ const useIncreaseCount = (max) => {
 const Home = () => {
   return (
     <section className="Home">
+      <article className="Home_aside-container">
+        <img src={HomeAside} alt="" className="Home_aside-img" />
+      </article>
       <article className="Home_init">
         <h2 className="Home_init-title">Radiohead concert</h2>
         <p className="Home_init-p">
-          Reserva tu ticket ahora mismo y de paso mira quién más comparte tu
-          pasión por el rock de los 90s y los 00.
+          Reserver your ticket rigth now and look who more share with you the
+          passion for the 90s, 00s rock
         </p>
         <Link to="/registre">
           <button className="Home_init-button">Start</button>

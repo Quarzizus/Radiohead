@@ -59,9 +59,11 @@ const ItemDetails = (props) => {
   };
 
   if (loading == true) {
-    <ContainerForm>
-      <LoaderPost />
-    </ContainerForm>;
+    return (
+      <ContainerForm>
+        <LoaderPost />
+      </ContainerForm>
+    );
   }
   return (
     <div className="ContainerHero">
@@ -70,8 +72,8 @@ const ItemDetails = (props) => {
           firstName={data.firstName}
           lastName={data.lastName}
           jobTitle={data.jobTitle}
-          twitter={data.email}
-          email={"angelpepe@gmail.com"}
+          twitter={data.twitter}
+          email={data.email}
         />
         <article className="Actions">
           <h2>Actions</h2>
@@ -83,7 +85,7 @@ const ItemDetails = (props) => {
               Delete
             </button>
           </section>
-          <Modal open={open}>
+          <Modal open={open} onClose={onClose}>
             <DeleteItem onClose={onClose} deleteData={deleteData} />
           </Modal>
         </article>

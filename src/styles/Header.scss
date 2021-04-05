@@ -7,9 +7,10 @@
   align-items: center;
   justify-content: space-around;
   height: 80px;
-  .container-banana {
+  .container-icon {
+    user-select: none;
     .Header_icon {
-      width: 70;
+      user-select: none;
     }
   }
   .Header_menu {
@@ -17,13 +18,24 @@
     display: flex;
     width: 30%;
     justify-content: space-around;
-
+    user-select: none;
     li {
       display: inline-block;
-      .link {
+      .link,
+      a {
+        font-weight: bold;
         text-decoration: none;
         color: $font-color;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .Header {
+    padding: 0px 15px;
+    .Header_menu {
+      width: 50%;
     }
   }
 }

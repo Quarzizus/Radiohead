@@ -60,34 +60,54 @@ const ItemEdit = (props) => {
   }, []);
 
   if (loading == true) {
-    <div className="ItemEdit">
-      <ContainerForm>
-        <LoaderPost />
-      </ContainerForm>
-    </div>;
+    return (
+      <div className="ItemEdit">
+        <ContainerForm>
+          <LoaderPost />
+        </ContainerForm>
+      </div>
+    );
+  } else if (window.matchMedia("(min-width:720px)").matches) {
+    return (
+      <div>
+        <ContainerForm>
+          <Target
+            firstName={form.firstName}
+            lastName={form.lastName}
+            jobTitle={form.jobTitle}
+            twitter={form.twitter}
+            email={form.email}
+          />
+          <Form
+            onChange={changeHandler}
+            onSubmit={submitHandler}
+            firstName={form.firstName}
+            lastName={form.lastName}
+            twitter={form.twitter}
+            email={form.email}
+            jobTitle={form.jobTitle}
+            message={`Save changes`}
+          />
+        </ContainerForm>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <ContainerForm>
+          <Form
+            onChange={changeHandler}
+            onSubmit={submitHandler}
+            firstName={form.firstName}
+            lastName={form.lastName}
+            twitter={form.twitter}
+            email={form.email}
+            jobTitle={form.jobTitle}
+            message={`Save changes`}
+          />
+        </ContainerForm>
+      </div>
+    );
   }
-  return (
-    <div>
-      <ContainerForm>
-        <Target
-          firstName={form.firstName}
-          lastName={form.lastName}
-          jobTitle={form.jobTitle}
-          twitter={form.twitter}
-          email={form.email}
-        />
-        <Form
-          onChange={changeHandler}
-          onSubmit={submitHandler}
-          firstName={form.firstName}
-          lastName={form.lastName}
-          twitter={form.twitter}
-          email={form.email}
-          jobTitle={form.jobTitle}
-          message={`Save changes`}
-        />
-      </ContainerForm>
-    </div>
-  );
 };
 export default ItemEdit;

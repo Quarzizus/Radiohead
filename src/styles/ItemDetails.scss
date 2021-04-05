@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 7px 20px;
+  padding: 10px 20px;
   background-color: $grayBlack;
   width: 30%;
   height: 40%;
@@ -32,5 +32,12 @@
   .Actions_button-delete {
     background-color: rgb(199, 30, 30);
     color: $font-color;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .Actions {
+    width: 60%;
+    height: 90px;
   }
 }

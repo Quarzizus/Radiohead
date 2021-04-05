@@ -48,9 +48,6 @@ const Form = (props) => {
         value={props.twitter}
         placeholder="@pepeperez"
       />
-      <button onClick={sendHandler} className="Form_updateImage">
-        Image
-      </button>
       <button className="Form_send">{props.message}</button>
     </form>
   );

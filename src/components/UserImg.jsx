@@ -7,7 +7,7 @@ const UserImg = (props) => {
   const avatarUrl = uiavatars.generateAvatar({
     uppercase: true,
     name: `${firstName} ${lastName}`,
-    background: "a5daa6",
+    background: "ffd553",
     color: "000000",
     bold: true,
     length: 2,

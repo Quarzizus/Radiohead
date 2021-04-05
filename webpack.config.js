@@ -2,6 +2,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -14,6 +17,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
+  mode: "production",
   module: {
     rules: [
       // rules js,jsx
@@ -51,15 +55,11 @@ module.exports = {
           {
             loader: "file-loader",
             // any file into assets with extensions of media
-            options: { name: "./src/images/[hash].[ext]" },
+            options: { name: "./images/[hash].[ext]" },
           },
         ],
       },
     ],
-  },
-  // important for react.router
-  devServer: {
-    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -68,7 +68,12 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       // any file into assets with extensions .css
-      filename: "styles/[name].css",
+      filename: "[name].css",
     }),
+    new CleanWebpackPlugin(),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+  },
 };

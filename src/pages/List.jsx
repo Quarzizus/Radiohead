@@ -5,7 +5,7 @@ import "../styles/List.scss";
 
 const List = (props) => {
   if (props.loading == true) {
-    <Loader />;
+    return <Loader />;
   }
   return (
     <section className="container-List">

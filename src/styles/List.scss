@@ -11,6 +11,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
+    padding: 15px 0px;
     .List_button {
       width: 20%;
       padding: 10px;
@@ -19,10 +20,20 @@
       background-color: $gold;
       border: none;
       align-self: flex-end;
-      color: white;
       .List_button-link {
         text-decoration: none;
-        color: white;
+        color: $grayBlack;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .container-List {
+    .List {
+      width: 85%;
+      .List_button {
+        width: 75px;
       }
     }
   }

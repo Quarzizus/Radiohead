@@ -45,8 +45,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: $gold;
-
+    color: $gold-2;
+    padding: 0 15px;
     h2 {
       color: $font-color;
       font-weight: bold;
@@ -60,5 +60,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .Target {
+    width: 80%;
+    height: 75%;
   }
 }

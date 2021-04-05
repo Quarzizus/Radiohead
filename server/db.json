@@ -13,7 +13,7 @@
       "id": "63c03386-33a2-4512-9ac1-354ad7bec5e9",
       "firstName": "Daphney",
       "lastName": "Torphies",
-      "email": "Ron61@hotmail.com",
+      "email": "Ron62@hotmail.com",
       "jobTitle": "National Markets Officer",
       "twitter": "DaphneyTorphy96105",
       "avatarUrl": "https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon"
@@ -42,7 +42,7 @@
       "lastName": "Runolfsdottir",
       "email": "Laurianne.Lynch@gmail.com",
       "jobTitle": "Lead Marketing Director",
-      "twitter": "BreannaRunolfsdottir70705-1477",
+      "twitter": "BreannaRunolf",
       "avatarUrl": "https://www.gravatar.com/avatar/684697e194c66d338c5ee91d030121cc?d=identicon"
     },
     {
@@ -447,30 +447,6 @@
       "email": "pepe@gmail.com",
       "twitter": "@pepe",
       "id": "mi4DsLQ"
-    },
-    {
-      "firstName": "Freddy",
-      "lastName": "Vega",
-      "jobTitle": "Backend Developer",
-      "email": "juancitoarango10@hotmail.com",
-      "twitter": "@freddier",
-      "id": "hptKcXM"
-    },
-    {
-      "firstName": "Freddy",
-      "lastName": "Perez",
-      "jobTitle": "Backend Developer",
-      "email": "pepe123@gmail.com",
-      "twitter": "@freddier88",
-      "id": "eVXzJOO"
-    },
-    {
-      "firstName": "Jimena",
-      "lastName": "Vargas",
-      "jobTitle": "Ingeniera Ambiental",
-      "email": "menamor@gmail.com",
-      "twitter": "@jimena_44",
-      "id": "R2W4NaZ"
     }
   ]
 }

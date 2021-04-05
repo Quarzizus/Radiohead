@@ -24,7 +24,7 @@ const Target = (props) => {
         <a>{props.twitter || "@twitter"}</a>
       </article>
       <article className="Target_footer">
-        <i>#VamosQuePodemos</i>
+        <i>#BananaKong</i>
       </article>
     </section>
   );

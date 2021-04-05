@@ -3,42 +3,95 @@
 
 .Home {
   height: calc(100vh - 80px);
-  background: linear-gradient(to top right, rgb(8, 8, 8), rgb(26, 22, 22));
+  background: linear-gradient(to top right, rgb(3, 3, 3), rgb(7, 7, 7));
   display: flex;
-  justify-content: center;
-
   .Home_init {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
     align-items: center;
-
+    width: 50%;
+    padding-right: 20px;
     .Home_init-title {
       color: rgb(12, 12, 12);
       text-transform: uppercase;
-      font-size: 110px;
+      font-size: 90px;
       text-align: center;
       letter-spacing: 4px;
       line-height: 90%;
       font-family: "Fjalla One", sans-serif;
       color: $gold;
+      user-select: none;
     }
+
     .Home_init-p {
       color: $font-color;
       line-height: 1.7;
       margin: 1.7rem;
       text-align: center;
-      width: 70%;
+      width: 60%;
+    }
+    .Home_init-p::selection {
+      background-color: #ffd553;
+      color: black;
     }
     .Home_init-button {
-      padding: 15px 5px;
+      padding: 15px 15px;
+      border-radius: 15px;
       color: black;
       width: 90px;
-      font-size: 17px;
+      font-size: 15px;
       border: none;
-      background-color: $font-color;
+      background-color: #ffd553;
       cursor: pointer;
+      user-select: none;
+    }
+  }
+  .Home_aside-container {
+    width: 50%;
+    .Home_aside-img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      user-select: none;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .Home {
+    .Home_aside-container {
+      display: none;
+    }
+    .Home_init {
+      padding-right: 0px;
+      width: 100%;
+      .Home_init-title {
+        font-size: 65px;
+        line-height: 1;
+      }
+    }
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 1000px) {
+  .Home {
+    .Home_init {
+      width: 50%;
+      padding-right: 0px;
+
+      .Home_init-title {
+        font-size: 65px;
+        line-height: 1;
+      }
+    }
+    .Home_aside-container {
+      width: 50%;
+      .Home_aside-img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+      }
     }
   }
 }

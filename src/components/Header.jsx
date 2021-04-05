@@ -20,7 +20,15 @@ const Header = () => {
             Registre
           </Link>
         </li>
-        <li>Contact</li>
+        <li>
+          <a
+            href="https://github.com/Quarzizus/radiohead-concert"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Repository
+          </a>
+        </li>
       </ul>
     </header>
   );

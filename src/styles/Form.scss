@@ -17,7 +17,7 @@
     color: $font-color;
   }
   ::placeholder {
-    color: $font-color;
+    color: #d9d9d99a;
   }
   .Form_terms {
     display: flex;
@@ -48,5 +48,16 @@
   .Form_send {
     background-color: $gold;
     color: black;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .Form {
+    min-width: 300px;
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 1000px) {
+  .Form {
+    width: 45%;
   }
 }

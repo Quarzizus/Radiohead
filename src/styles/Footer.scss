@@ -1,0 +1,26 @@
+@import "../styles/variables/Variables.scss";
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  color: $font-color;
+  .Footer_name {
+    color: $font-color;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .Footer_container-icons {
+    a {
+      img {
+        width: 24px;
+      }
+    }
+  }
+  .Footer_year {
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+}
