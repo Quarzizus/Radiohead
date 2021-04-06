@@ -3,11 +3,13 @@ cache:
   directories:
     - node_modules
     - ~/.npm
-node_js: 
-  - '12'
+node_js:
+  - "12"
 git:
   depth: 3
-script: 
+install:
+  - yarn add json-server
+script:
   - yarn build
 deploy:
   provider: pages
