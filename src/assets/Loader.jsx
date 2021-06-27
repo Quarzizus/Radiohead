@@ -5,7 +5,7 @@ const Loader = () => {
   return (
     <section className="container-List">
       <div className="List">
-        <button className="List_button">Registre</button>
+        <button className="List_button">Register</button>
         <article className="List_card">
           <picture className="List_card--contain-img">
             <Skeleton />

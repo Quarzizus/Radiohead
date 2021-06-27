@@ -1,15 +1,7 @@
 import React from "react";
-import "../styles/Home.scss";
 import HomeAside from "../images/RadioheadHome.jpg";
 import { Link } from "react-router-dom";
-
-const useIncreaseCount = (max) => {
-  const [count, setCount] = React.useState(0);
-  if (count > max) {
-    setCount(0);
-  }
-  return [count, setCount];
-};
+import "../styles/Home.scss";
 
 const Home = () => {
   return (
@@ -23,7 +15,7 @@ const Home = () => {
           Reserver your ticket rigth now and look who more share with you the
           passion for the 90s, 00s rock
         </p>
-        <Link to="/registre">
+        <Link to="/register">
           <button className="Home_init-button">Start</button>
         </Link>
       </article>

@@ -6,14 +6,14 @@
   display: flex;
   flex-direction: column;
   .Target_header {
-    background-color: $gold;
+    background-color: #1da1f2;
     height: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .Target_profile {
-    background-color: $grayBlack;
+    background-color: rgb(24, 22, 22);
     height: 40%;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
 
     .Target_profile-fullname {
       width: 50%;
-      color: $font-color;
+      color: #d9d9d9;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,33 +39,39 @@
     }
   }
   .Target_info {
-    background-color: $grayWhite;
+    background-color: rgb(29, 26, 26);
     height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: $gold-2;
+    color: #ffd553;
     padding: 0 15px;
     h2 {
-      color: $font-color;
+      color: #d9d9d9;
       font-weight: bold;
       text-transform: capitalize;
       text-align: center;
     }
   }
   .Target_footer {
-    background-color: $gold;
+    background-color: #1da1f2;
     height: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
-
 @media screen and (min-width: 320px) and (max-width: 720px) {
   .Target {
     width: 80%;
     height: 75%;
+    margin-top: 20px;
+  }
+  .None {
+    display: none;
+  }
+  .Block {
+    display: block;
   }
 }

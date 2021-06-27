@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="Header">
       <Link to="/" className="container-icon">
-        <img src={Banana} className="Header_icon" width="25%" />
+        <img src={Banana} className="Header_icon" width="25px" />
       </Link>
       <ul className="Header_menu">
         <li>
@@ -16,8 +16,8 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link to="/registre" className="link">
-            Registre
+          <Link to="/register" className="link">
+            Register
           </Link>
         </li>
         <li>

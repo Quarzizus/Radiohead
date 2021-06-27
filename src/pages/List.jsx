@@ -3,19 +3,16 @@ import { Link } from "react-router-dom";
 import Loader from "../assets/Loader";
 import "../styles/List.scss";
 
-const List = (props) => {
-  if (props.loading == true) {
-    return <Loader />;
-  }
+const List = ({ children }) => {
   return (
     <section className="container-List">
       <div className="List">
         <button className="List_button">
-          <Link to="/registre" className="List_button-link">
-            Registre
+          <Link to="/register" className="List_button-link">
+            Register
           </Link>
         </button>
-        {props.children}
+        {children}
       </div>
     </section>
   );

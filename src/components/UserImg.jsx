@@ -1,9 +1,7 @@
 import React from "react";
 const uiavatars = require("ui-avatars");
 
-const UserImg = (props) => {
-  const firstName = props.firstName;
-  const lastName = props.lastName;
+const UserImg = ({firstName, lastName, className}) => {
   const avatarUrl = uiavatars.generateAvatar({
     uppercase: true,
     name: `${firstName} ${lastName}`,
@@ -13,7 +11,7 @@ const UserImg = (props) => {
     length: 2,
   });
 
-  return <img src={avatarUrl} className={props.className} />;
+  return <img src={avatarUrl} className={className} />;
 };
 
 export default UserImg;

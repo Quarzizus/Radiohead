@@ -1,87 +1,44 @@
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import AppContext from "../context/AppContext";
 import ContainerForm from "./ContainerForm";
-import LoaderPost from "../assets/LoaderPost";
 import Form from "../components/Form";
 import Target from "../components/Target";
-import React, { useState } from "react";
 
-const ContainerHero = (props) => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    jobTitle: "",
-    email: "",
-    twitter: "",
-  });
+const ContainerHero = () => {
+  const { state, dispatch, user, setUser } = useContext(AppContext);
+  const { firstName, lastName, jobTitle, twitter } = user;
+  const history = useHistory();
 
-  //INPUT
-  const changeHandler = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handlerRegister = (e) => {
+    setUser({
+      ...user,
+      id: state.items.length + 1,
+      [e.target.name]: e.target.value,
+    });
   };
-  //POST
-  const submitHandler = async (e) => {
+  const handlerSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    const config = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    };
-    try {
-      await fetch(`http://localhost:8081/badges`, config);
-      setLoading(false);
-      console.log(form);
-      props.history.push("/list");
-    } catch (error) {
-      setLoading(false);
-      setError(error);
-    }
+    dispatch({
+      type: "REGISTER",
+      payload: user,
+    });
+    history.push("/list");
   };
 
-  if (loading == true) {
-    return (
-      <div className="ContainerHero">
-        <ContainerForm>
-          <LoaderPost />
-        </ContainerForm>
-      </div>
-    );
-  } else if (window.matchMedia("(min-width:720px)").matches) {
-    return (
-      <div className="ContainerHero">
-        <ContainerForm>
-          <Target
-            firstName={form.firstName}
-            lastName={form.lastName}
-            twitter={form.twitter}
-            email={form.email}
-            jobTitle={form.jobTitle}
-          />
-          <Form
-            onChange={changeHandler}
-            onSubmit={submitHandler}
-            message={`Send`}
-          />
-        </ContainerForm>
-      </div>
-    );
-  } else {
-    return (
-      <div className="ContainerHero">
-        <ContainerForm>
-          <Form
-            onChange={changeHandler}
-            onSubmit={submitHandler}
-            message={`Send`}
-          />
-        </ContainerForm>
-      </div>
-    );
-  }
+  return (
+    <div className="ContainerHero">
+      <ContainerForm>
+        <Target
+          firstName={firstName}
+          lastName={lastName}
+          jobTitle={jobTitle}
+          twitter={twitter}
+        />
+        <Form change={handlerRegister} submit={handlerSubmit} />
+      </ContainerForm>
+    </div>
+  );
 };
 
 export default ContainerHero;

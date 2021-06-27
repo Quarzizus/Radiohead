@@ -1,40 +1,26 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useState, useMemo, useContext } from "react";
 import ItemList from "../components/ItemList";
 import Search from "../components/Search";
 import List from "../pages/List";
+import AppContext from "../context/AppContext";
 
-const ContainerList = (props) => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({ badges: [] });
-  const [error, setError] = useState(null);
+const ContainerList = () => {
+  const {
+    state: { items },
+  } = useContext(AppContext);
+  const [filtered, setFiltered] = useState(items);
   const [value, setValue] = useState("");
-  const [filtered, setFiltered] = useState(data.badges);
 
   useMemo(() => {
-    const filteredItems = data.badges.filter((item) => {
+    const filteredItems = items.filter((item) => {
       return `${item.firstName} ${item.lastName}`
         .toLowerCase()
         .includes(value.toLowerCase());
     });
     setFiltered(filteredItems);
-  }, [data.badges, value]);
+  }, [items, value]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`http://localhost:8081/badges`);
-        const data = await response.json();
-        setLoading(false);
-        setData({ badges: data });
-      } catch (error) {
-        setLoading(false);
-        setError(error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (filtered.length == 0) {
+  if (!filtered.length) {
     <div className="containerList">
       <Search
         value={value}
@@ -42,7 +28,7 @@ const ContainerList = (props) => {
           setValue(e.target.value);
         }}
       />
-      <List loading={loading}></List>
+      <List></List>
     </div>;
   }
   return (
@@ -53,16 +39,16 @@ const ContainerList = (props) => {
           setValue(e.target.value);
         }}
       />
-      <List loading={loading}>
-        {filtered.map((dato) => (
+      <List>
+        {filtered.map((item) => (
           <ItemList
-            key={dato.id}
-            id={dato.id}
-            firstName={dato.firstName}
-            lastName={dato.lastName}
-            email={dato.email}
-            twitter={dato.twitter}
-            jobTitle={dato.jobTitle}
+            key={item.id}
+            id={item.id}
+            firstName={item.firstName}
+            lastName={item.lastName}
+            email={item.email}
+            twitter={item.twitter}
+            jobTitle={item.jobTitle}
           />
         ))}
       </List>
