@@ -20,4 +20,4 @@ deploy:
   target-branch: gh-pages
   commit_message: "Deploy Ready :3"
   on:
-    branch: master
+    branch: context
