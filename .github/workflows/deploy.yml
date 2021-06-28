@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - context
+
 jobs:
   build:
     name: Build
