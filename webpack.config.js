@@ -55,7 +55,7 @@ module.exports = {
           {
             loader: "file-loader",
             // any file into assets with extensions of media
-            options: { name: "./images/[hash].[ext]" },
+            options: { name: "images/[hash].[ext]" },
           },
         ],
       },
@@ -63,8 +63,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html",
+      template: "public/index.html",
+      filename: "index.html",
     }),
     new MiniCssExtractPlugin({
       // any file into assets with extensions .css
